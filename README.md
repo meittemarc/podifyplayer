@@ -95,3 +95,32 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+## PROJECT COMMANDS
+
+npx @react-native-community/cli init podifyplayer
+code podifyplayer
+npx react-native start --reset-cache
+npm install --save-dev babel-plugin-module-resolver
+npm install -D @tsconfig/react-native @types/jest @types/react @types/react-test-renderer typescript
+npx react-native start --reset-cache
+npx react-native run-android
+npm install formik --save
+npm install yup --save
+npm i react-native-vector-icons
+npm i @types/react-native-vector-icons
+
+# Reanimated
+
+npm install react-native-reanimated
+cd ios
+pod install
+
+# Navigation
+
+npm install @react-navigation/native
+npm install react-native-screens react-native-safe-area-context
+
+configure react navigation, follow the guide
+
+npm install @react-navigation/native-stack
