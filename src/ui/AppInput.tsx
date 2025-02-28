@@ -16,11 +16,11 @@ const AppInput: FC<Props> = props => {
 
 const styles = StyleSheet.create({
   input: {
-    borderWidth: 2,
     borderColor: colors.SECONDARY,
-    height: 45,
     borderRadius: 25,
+    borderWidth: 2,
     color: colors.CONTRAST,
+    height: 45,
     padding: 10,
   },
 });

@@ -30,12 +30,13 @@ const AuthFormContainer: FC<Props> = ({children, heading, subHeading}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: colors.PRIMARY,
     alignItems: 'center',
+    backgroundColor: colors.PRIMARY,
+    flex: 1,
     justifyContent: 'center',
     paddingHorizontal: 15,
   },
+  headerContainer: {marginBottom: 20, width: '100%'},
   heading: {
     color: colors.SECONDARY,
     fontSize: 25,
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
   subHeading: {color: colors.CONTRAST, fontSize: 16},
-  headerContainer: {width: '100%', marginBottom: 20},
 });
 
 export default AuthFormContainer;

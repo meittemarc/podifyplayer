@@ -8,6 +8,11 @@ import AppLink from '@ui/AppLink';
 import AuthFormContainer from '@components/AuthFormContainer';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {AuthStackParamList} from 'src/@types/navigation';
+import {FormikHelpers} from 'formik';
+import client from 'src/api/client';
+import catchAsyncError from 'src/api/catchError';
+import {upldateNotification} from 'src/store/notification';
+import {useDispatch} from 'react-redux';
 
 const lostPasswordSchema = yup.object({
   email: yup
@@ -19,17 +24,41 @@ const lostPasswordSchema = yup.object({
 
 interface Props {}
 
+interface InitialValue {
+  email: string;
+}
+
 const initialValues = {
   email: '',
 };
 
 const LostPassword: FC<Props> = props => {
+  const dispatch = useDispatch();
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
+
+  const handleSubmit = async (
+    values: InitialValue,
+    actions: FormikHelpers<InitialValue>,
+  ) => {
+    actions.setSubmitting(true);
+    try {
+      // we want to send these information to our api
+      const {data} = await client.post('/auth/forget-password', {
+        ...values,
+      });
+
+      console.log(data);
+    } catch (error) {
+      const errorMessage = catchAsyncError(error);
+      dispatch(upldateNotification({message: errorMessage, type: 'error'}));
+    }
+
+    actions.setSubmitting(false);
+  };
+
   return (
     <Form
-      onSubmit={values => {
-        console.log(values);
-      }}
+      onSubmit={handleSubmit}
       initialValues={initialValues}
       validationSchema={lostPasswordSchema}>
       <AuthFormContainer
@@ -71,14 +100,14 @@ const styles = StyleSheet.create({
   formContainer: {
     width: '100%',
   },
-  marginBottom: {
-    marginBottom: 20,
-  },
   linkContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+  },
+  marginBottom: {
+    marginBottom: 20,
   },
 });
 

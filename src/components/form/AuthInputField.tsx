@@ -102,26 +102,26 @@ const AuthInputField: FC<Props> = props => {
 };
 
 const styles = StyleSheet.create({
-  labelContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    padding: 5,
+  errorMsg: {
+    color: colors.ERROR,
   },
   label: {
     color: colors.CONTRAST,
   },
-  errorMsg: {
-    color: colors.ERROR,
+  labelContainer: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5,
   },
   rightIcon: {
-    width: 45,
-    height: 45,
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    justifyContent: 'center',
     alignItems: 'center',
+    height: 45,
+    justifyContent: 'center',
+    position: 'absolute',
+    right: 0,
+    top: 0,
+    width: 45,
   },
 });
 

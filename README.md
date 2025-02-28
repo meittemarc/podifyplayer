@@ -182,3 +182,7 @@ adb -s emulator-5554 emu kill # Replace `emulator-5554` with your emulator ID
 To force close all emulators, use:
 killall qemu-system-x86_64 # On macOS
 taskkill /IM "qemu-system-x86_64.exe" /F # On Windows
+
+# watch code
+
+npx tsc --watch

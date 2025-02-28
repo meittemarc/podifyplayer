@@ -19,16 +19,16 @@ const OTPField = forwardRef<TextInput, Props>((props, ref) => {
 
 const styles = StyleSheet.create({
   input: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
     borderColor: colors.SECONDARY,
+    borderRadius: 25,
     borderWidth: 2,
-    textAlign: 'center',
     color: colors.CONTRAST,
     fontSize: 18,
     fontWeight: 'bold',
+    height: 50,
     lineHeight: 0,
+    textAlign: 'center',
+    width: 50,
   },
 });
 
