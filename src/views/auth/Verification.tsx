@@ -9,7 +9,7 @@ interface Props {}
 
 const otpFields = new Array(6).fill('');
 
-const Verification: FC<Props> = props => {
+const Verification: FC<Props> = _props => {
   const [otp, setOtp] = useState([...otpFields]);
   const [activeOtpIndex, setActiveOtpIndex] = useState(0);
 
@@ -40,7 +40,7 @@ const Verification: FC<Props> = props => {
   };
 
   const handleSubmit = () => {
-    console.log(otp);
+    // console.log(otp);
   };
 
   useEffect(() => {
@@ -78,16 +78,16 @@ const Verification: FC<Props> = props => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    width: '100%',
+    alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
     marginBottom: 20,
+    width: '100%',
   },
   linkContainer: {
+    alignItems: 'flex-end',
     marginTop: 20,
     width: '100%',
-    alignItems: 'flex-end',
   },
 });
 

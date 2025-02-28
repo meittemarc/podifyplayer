@@ -124,3 +124,61 @@ npm install react-native-screens react-native-safe-area-context
 configure react navigation, follow the guide
 
 npm install @react-navigation/native-stack
+
+# Typescript and .eslintrc
+
+WARNING: You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree.
+
+You may find that it works just fine, or you may not.
+
+SUPPORTED TYPESCRIPT VERSIONS: >=4.7.4 <5.6.0
+
+YOUR TYPESCRIPT VERSION: 5.7.3
+
+Please only submit bug reports when using the officially supported version.
+
+# eslint
+
+npm install --save-dev @typescript-eslint/parser@7.18.0 @typescript-eslint/eslint-plugin@7.18.0
+
+Quel est la différence entre @react-native/eslint-config, @typescript-eslint/eslint, le fichier dans le code .eslintrc.js, le fichier .prettierrc.js, le message "WARNING: You are currently running a version of TypeScript which is not officially supported by @typescript-eslint/typescript-estree." quand lance sur le terminal npx eslint . --ext .js,.jsx,.ts,.tsx ?
+
+npm install --save-dev @typescript-eslint/parser @typescript-eslint/eslint-plugin \
+ eslint-plugin-react eslint-plugin-react-native eslint-plugin-import \
+ eslint-plugin-jsx-a11y eslint-plugin-prettier eslint-config-prettier prettier
+
+# Gradle
+
+cd android
+./gradlew clean
+./gradlew --stop
+rm -rf app/build .gradle
+cd ..
+rm -rf node_modules package-lock.json
+npm install
+cd android
+./gradlew assembleDebug
+cd ..
+npx react-native run-android
+
+# Simulator
+
+IOS
+Run the following command in your terminal:
+
+xcrun simctl shutdown booted
+This will shut down the currently running iOS Simulator.
+
+If you want to completely quit the Simulator app, use:
+killall Simulator
+
+ANDROID
+If you started the emulator via the command line, you can shut it down using:
+adb emu kill
+
+adb devices # List running emulators
+adb -s emulator-5554 emu kill # Replace `emulator-5554` with your emulator ID
+
+To force close all emulators, use:
+killall qemu-system-x86_64 # On macOS
+taskkill /IM "qemu-system-x86_64.exe" /F # On Windows

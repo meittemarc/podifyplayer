@@ -1,20 +1,12 @@
+/* eslint-disable no-useless-escape */
 import AuthInputField from '@components/form/AuthInputField';
 import Form from '@components/form';
-import colors from '@utils/colors';
 import {FC, useState} from 'react';
-import {
-  Button,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import * as yup from 'yup';
 import SubmitBtn from '@components/form/SubmitBtn';
 import PasswordVisibilityIcon from '@ui/PasswordVisibilityIcon';
 import AppLink from '@ui/AppLink';
-import CircleUi from '@ui/CircleUi';
 import AuthFormContainer from '@components/AuthFormContainer';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {AuthStackParamList} from 'src/@types/navigation';
@@ -49,7 +41,7 @@ const initialValues = {
   password: '',
 };
 
-const SignUp: FC<Props> = props => {
+const SignUp: FC<Props> = _props => {
   const [secureEntry, setSecureEntry] = useState(true);
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
 
@@ -59,8 +51,8 @@ const SignUp: FC<Props> = props => {
 
   return (
     <Form
-      onSubmit={values => {
-        console.log(values);
+      onSubmit={_ => {
+        //    console.log(values);
       }}
       initialValues={initialValues}
       validationSchema={signupSchema}>
@@ -118,14 +110,14 @@ const styles = StyleSheet.create({
   formContainer: {
     width: '100%',
   },
-  marginBottom: {
-    marginBottom: 20,
-  },
   linkContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+  },
+  marginBottom: {
+    marginBottom: 20,
   },
 });
 

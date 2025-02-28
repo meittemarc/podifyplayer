@@ -21,8 +21,8 @@ cd android || exit
 ./gradlew clean
 
 # Reconstruction du projet
-echo "⚙️ Reconstruction de l'application..."
-cd ..
-npx react-native run-android
+## echo "⚙️ Reconstruction de l'application..."
+##cd ..
+##npx react-native run-android
 
-echo "✅ Réinitialisation et reconstruction terminées !"
+##echo "✅ Réinitialisation et reconstruction terminées !"

@@ -57,6 +57,13 @@ react {
     autolinkLibrariesWithApp()
 }
 
+tasks.whenTaskAdded { task ->
+    if (task.name == 'generateDebugLintReportModel') {
+        task.dependsOn ':app:copyReactNativeVectorIconFonts'
+    }
+}
+
+
 /**
  * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
  */

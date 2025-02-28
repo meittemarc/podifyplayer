@@ -30,7 +30,7 @@ const initialValues = {
   password: '',
 };
 
-const SignIn: FC<Props> = props => {
+const SignIn: FC<Props> = _ => {
   const [secureEntry, setSecureEntry] = useState(true);
   const navigation = useNavigation<NavigationProp<AuthStackParamList>>();
 
@@ -40,8 +40,8 @@ const SignIn: FC<Props> = props => {
 
   return (
     <Form
-      onSubmit={values => {
-        console.log(values);
+      onSubmit={_values => {
+        //    console.log(values);
       }}
       initialValues={initialValues}
       validationSchema={signinSchema}>
@@ -91,14 +91,14 @@ const styles = StyleSheet.create({
   formContainer: {
     width: '100%',
   },
-  marginBottom: {
-    marginBottom: 20,
-  },
   linkContainer: {
-    flexDirection: 'row',
     alignItems: 'center',
+    flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: 20,
+  },
+  marginBottom: {
+    marginBottom: 20,
   },
 });
 
